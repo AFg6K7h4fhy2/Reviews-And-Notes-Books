@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "book-reviews-and-notes"
+version = "0.1.0"
+description = "Book reviews and reading notes taken by AFg6K7h4fhy2."
+authors = ["AFg6K7h4fhy2 <127630341+AFg6K7h4fhy2@users.noreply.github.com>"]
+license = "MIT License"
+readme = "README.md"
+packages = [{include = "book_reviews_and_notes"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pre-commit = "^3.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

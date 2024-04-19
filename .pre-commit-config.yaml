@@ -1,0 +1,42 @@
+repos:
+################################################################################
+# Basic file operations
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-yaml
+        args: [--allow-multiple-documents]
+    -   id: check-toml
+    -   id: end-of-file-fixer
+    -   id: mixed-line-ending
+    -   id: trailing-whitespace
+################################################################################
+# Secrets
+# Turning Off until there are actually secrets
+# -   repo: https://github.com/Yelp/detect-secrets
+#     rev: v1.4.0
+#     hooks:
+#     -   id: detect-secrets
+#         args: ['--baseline', '.secrets.baseline']
+#         exclude: package.lock.json
+################################################################################
+# GitHub Actions
+-   repo: https://github.com/rhysd/actionlint
+    rev: v1.6.27
+    hooks:
+    -   id: actionlint
+################################################################################
+# Typos
+-   repo: https://github.com/crate-ci/typos
+    rev: v1.20.7
+    hooks:
+    -   id: typos
+        exclude: '^\.gitignore$'
+################################################################################
+# Commit Messages
+-   repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.22.0
+    hooks:
+    -   id: commitizen
+################################################################################
