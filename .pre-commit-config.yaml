@@ -21,11 +21,11 @@ repos:
 #         args: ['--baseline', '.secrets.baseline']
 #         exclude: package.lock.json
 ################################################################################
-# GitHub Actions
--   repo: https://github.com/rhysd/actionlint
-    rev: v1.6.27
-    hooks:
-    -   id: actionlint
+# # GitHub Actions
+# -   repo: https://github.com/rhysd/actionlint
+#     rev: v1.6.27
+#     hooks:
+#     -   id: actionlint
 ################################################################################
 # Typos
 -   repo: https://github.com/crate-ci/typos
