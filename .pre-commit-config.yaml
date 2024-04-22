@@ -1,6 +1,6 @@
 repos:
 ################################################################################
-# Basic file operations
+# General
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
@@ -12,8 +12,26 @@ repos:
     -   id: mixed-line-ending
     -   id: trailing-whitespace
 ################################################################################
+# Python
+-   repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.3.0
+    hooks:
+    -   id: black-jupyter
+        args: ['--line-length', '79']
+        language_version: python3
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+    -   id: isort
+        args: ['--profile', 'black',
+               '--line-length', '79']
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.6
+    hooks:
+      - id: ruff
+        args: ['--ignore=E741', '--ignore=E731', '--fix']
+################################################################################
 # Secrets
-# Turning Off until there are actually secrets
 # -   repo: https://github.com/Yelp/detect-secrets
 #     rev: v1.4.0
 #     hooks:
@@ -21,18 +39,23 @@ repos:
 #         args: ['--baseline', '.secrets.baseline']
 #         exclude: package.lock.json
 ################################################################################
-# # GitHub Actions
-# -   repo: https://github.com/rhysd/actionlint
-#     rev: v1.6.27
+# GitHub Actions
+-   repo: https://github.com/rhysd/actionlint
+    rev: v1.6.27
+    hooks:
+    -   id: actionlint
+################################################################################
+# Make Files
+# -   repo: https://github.com/mrtazz/checkmake.git
+#     rev: 0.2.2
 #     hooks:
-#     -   id: actionlint
+#     -   id: checkmake
 ################################################################################
 # Typos
 -   repo: https://github.com/crate-ci/typos
     rev: v1.20.7
     hooks:
     -   id: typos
-        exclude: '^\.gitignore$'
 ################################################################################
 # Commit Messages
 -   repo: https://github.com/commitizen-tools/commitizen
